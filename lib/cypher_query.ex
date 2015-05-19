@@ -15,13 +15,7 @@ defmodule CypherQuery do
   def builder, do: nil
   def builder(options), do: options
 
-  def combine([], options) do
-    options
-  end
-
-  def combine([head | tail], options) do
-    combine tail, options ++ head
-  end
-
+  def combine([], options), do: options
+  def combine([head | tail], options), do: combine tail, options ++ head
   def combine([head | tail]), do: combine([head|tail], [])
 end
