@@ -8,7 +8,7 @@ defmodule CypherQuery do
     Enum.join cypher, " "
   end
 
-  def join_values(options, key, joiner \\ ", ") do
+  defp join_values(options, key, joiner \\ ", ") do
     Enum.join Keyword.get_values(options, key), joiner
   end
 
