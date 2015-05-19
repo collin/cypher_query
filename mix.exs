@@ -7,7 +7,14 @@ defmodule CypherQuery.Mixfile do
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     description: "A dumb string-based query builder for neo4j Cypher queries",
+     package: %{
+       licenses: ["BSD"],
+       contributors: ["Collin Miller <collintmiller@gmail.com>"],
+       links: %{ "GitHub": "https://github.com/collin/cypher_query" }
+      }
+    ]
   end
 
   # Configuration for the OTP application
