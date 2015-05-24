@@ -26,4 +26,10 @@ defmodule CypherQueryTest do
   test "filters nodes with WHERE" do
     assert compile(builder where: 'n.a == true', where: 'n.b <> 88') == "WHERE (n.a == true AND n.b <> 88)"
   end
+
+  test "limits queries" do
+    q = builder match: '(n)', return: 'n', limit: 10
+    cypher = compile q
+    assert cypher == "MATCH (n) RETURN n LIMIT 10"
+  end
 end
